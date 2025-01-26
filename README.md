@@ -77,6 +77,11 @@ JOIN Salespersons sp ON s.SalespersonID = sp.SalespersonID
 GROUP BY s.SalespersonID
 ORDER BY TotalSales DESC;
 ```
+<details>
+  <summary>View Output</summary>
+![Total Sales by Each Salesperson](queries_results/Q1.PNG)
+</details>
+
 
 ### 2. Most Sold Products
 This query identifies which products have been sold the most in terms of quantity:
@@ -88,6 +93,10 @@ FROM Sales s
 JOIN Products p ON s.ProductID = p.ProductID
 GROUP BY p.ProductName
 ORDER BY TotalQuantitySold DESC;
+<details>
+  <summary>View Output</summary>
+![Total Sales by Each Salesperson](queries_results/Q2.PNG)
+</details>
 ```
 
 ### 3. Customer Spending
@@ -102,6 +111,10 @@ JOIN Customers c ON s.CustomerID = c.CustomerID
 GROUP BY c.CustomerID
 ORDER BY TotalSpent DESC;
 ```
+<details>
+  <summary>View Output</summary>
+![Total Sales by Each Salesperson](queries_results/Q3.PNG)
+</details>
 
 ### 4. Sales Growth Over Time (Window Function)
 To analyze sales growth, we can calculate the running total of sales using a window function:
@@ -112,6 +125,10 @@ SELECT
 FROM Sales
 ORDER BY SaleDate;
 ```
+<details>
+  <summary>View Output</summary>
+![Total Sales by Each Salesperson](queries_results/Q4.PNG)
+</details>
 
 ### 5. Sales Performance by Month (View)
 A view to summarize the sales performance by month, showing total sales and quantity sold:
@@ -126,6 +143,10 @@ GROUP BY MONTH(SaleDate);
 
 SELECT * FROM salesperformanceanalysis.salesperformancebymonth;
 ```
+<details>
+  <summary>View Output</summary>
+![Total Sales by Each Salesperson](queries_results/Q5.PNG)
+</details>
 
 ### 6. Top Products (CTE)
 Using a Common Table Expression (CTE), we can find the top products by total sales.
@@ -141,6 +162,10 @@ WITH TopProducts AS (
 SELECT * FROM TopProducts
 ORDER BY TotalSales DESC;
 ```
+<details>
+  <summary>View Output</summary>
+![Total Sales by Each Salesperson](queries_results/Q6.PNG)
+</details>
 
 ## Project Structure
 The project is organized as follows:
