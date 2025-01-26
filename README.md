@@ -18,6 +18,9 @@ The database consists of four main tables: `Customers`, `Products`, `Salesperson
 
 ### 1. Customers
 Stores customer details like name, contact information, and address.
+<details>
+  <summary>Click to View Customers Table Schema</summary>
+
 | Column Name  | Data Type     | Constraints                   |
 |--------------|---------------|-------------------------------|
 | CustomerID   | INT           | PRIMARY KEY, AUTO_INCREMENT   |
@@ -27,9 +30,15 @@ Stores customer details like name, contact information, and address.
 | PhoneNumber  | VARCHAR(15)   |                               |
 | Address      | VARCHAR(255)  |                               |
 
+</details>
+
+
 
 ### 2. Products
 Contains details about the products, including name, category, and price.
+<details>
+  <summary>Click to View Products Table Schema</summary>
+
 | Column Name  | Data Type     | Constraints                   |
 |--------------|---------------|-------------------------------|
 | ProductID    | INT           | PRIMARY KEY, AUTO_INCREMENT   |
@@ -37,9 +46,15 @@ Contains details about the products, including name, category, and price.
 | Category     | VARCHAR(50)   |                               |
 | Price        | DECIMAL(10, 2)| NOT NULL                      |
 
+</details>
+
+
 
 ### 3. Salespersons
 Holds salesperson information including their contact details.
+<details>
+  <summary>Click to View Salespersons Table Schema</summary>
+
 | Column Name  | Data Type     | Constraints                   |
 |--------------|---------------|-------------------------------|
 | SalespersonID| INT           | PRIMARY KEY, AUTO_INCREMENT   |
@@ -47,9 +62,15 @@ Holds salesperson information including their contact details.
 | LastName     | VARCHAR(50)   | NOT NULL                      |
 | Email        | VARCHAR(100)  |                               |
 
+</details>
+
+
 
 ### 4. Sales
 Tracks each sales transaction, including the date, quantity sold, and total amount, along with foreign keys linking to the `Customers`, `Products`, and `Salespersons` tables.
+<details>
+  <summary>Click to View Sales Table Schema</summary>
+
 | Column Name  | Data Type     | Constraints                   |
 |--------------|---------------|-------------------------------|
 | SaleID       | INT           | PRIMARY KEY, AUTO_INCREMENT   |
@@ -59,6 +80,9 @@ Tracks each sales transaction, including the date, quantity sold, and total amou
 | SalespersonID| INT           | FOREIGN KEY (References `Salespersons(SalespersonID)`) |
 | QuantitySold | INT           | NOT NULL                      |
 | TotalAmount  | DECIMAL(10, 2)| NOT NULL                      |
+
+</details>
+
 
 
 ## SQL Queries and Analysis
@@ -79,7 +103,9 @@ ORDER BY TotalSales DESC;
 ```
 <details>
   <summary>View Output</summary>
-![Total Sales by Each Salesperson](queries_results/Q1.PNG)
+
+  ![Total Sales by Each Salesperson](queries_results/Q1.PNG)
+
 </details>
 
 
@@ -93,11 +119,13 @@ FROM Sales s
 JOIN Products p ON s.ProductID = p.ProductID
 GROUP BY p.ProductName
 ORDER BY TotalQuantitySold DESC;
+```
 <details>
   <summary>View Output</summary>
-![Total Sales by Each Salesperson](queries_results/Q2.PNG)
+
+  ![Total Sales by Each Salesperson](queries_results/Q2.PNG)
+
 </details>
-```
 
 ### 3. Customer Spending
 This query determines which customers have spent the most:
@@ -113,7 +141,9 @@ ORDER BY TotalSpent DESC;
 ```
 <details>
   <summary>View Output</summary>
-![Total Sales by Each Salesperson](queries_results/Q3.PNG)
+
+  ![Total Sales by Each Salesperson](queries_results/Q3.PNG)
+
 </details>
 
 ### 4. Sales Growth Over Time (Window Function)
@@ -127,8 +157,11 @@ ORDER BY SaleDate;
 ```
 <details>
   <summary>View Output</summary>
-![Total Sales by Each Salesperson](queries_results/Q4.PNG)
+
+  ![Total Sales by Each Salesperson](queries_results/Q4.PNG)
+
 </details>
+
 
 ### 5. Sales Performance by Month (View)
 A view to summarize the sales performance by month, showing total sales and quantity sold:
@@ -145,7 +178,9 @@ SELECT * FROM salesperformanceanalysis.salesperformancebymonth;
 ```
 <details>
   <summary>View Output</summary>
-![Total Sales by Each Salesperson](queries_results/Q5.PNG)
+
+  ![Total Sales by Each Salesperson](queries_results/Q5.PNG)
+
 </details>
 
 ### 6. Top Products (CTE)
@@ -164,7 +199,9 @@ ORDER BY TotalSales DESC;
 ```
 <details>
   <summary>View Output</summary>
-![Total Sales by Each Salesperson](queries_results/Q6.PNG)
+
+  ![Total Sales by Each Salesperson](queries_results/Q6.PNG)
+
 </details>
 
 ## Project Structure
