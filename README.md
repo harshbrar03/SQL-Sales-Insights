@@ -3,6 +3,16 @@
 ## Project Overview
 This project is designed to analyze sales data in order to evaluate the performance of salespeople, products, and customers. By leveraging SQL, it explores real-world business questions using advanced SQL techniques, including Common Table Expressions (CTEs), window functions, and views. The project involves creating a relational database with well-structured tables and running queries to extract insights that drive data-backed decision-making.
 
+## Project Structure
+The project is organized as follows:
+
+- `queries_result/`: Contains 6 screenshots of the SQL query results.
+- `schema.sql`: The SQL script to create the database schema.
+- `insert_data.sql`: The SQL script to insert sample data into the tables.
+- `queries.sql`: Contains the SQL scripts used to solve the business problems.
+- `README.md`: This file, explaining the project, problem statement, SQL queries, and analysis.
+
+  
 ## Problem Statement
 The primary goal of this project is to analyze the sales performance of a company. The business questions addressed in this analysis are:
 - What is the total sales made by each salesperson?
@@ -204,14 +214,7 @@ ORDER BY TotalSales DESC;
 
 </details>
 
-## Project Structure
-The project is organized as follows:
 
-- `queries_result/`: Contains 6 screenshots of the SQL query results.
-- `schema.sql`: The SQL script to create the database schema.
-- `insert_data.sql`: The SQL script to insert sample data into the tables.
-- `queries.sql`: Contains the SQL scripts used to solve the business problems.
-- `README.md`: This file, explaining the project, problem statement, SQL queries, and analysis.
 
 
 ## Conclusion
